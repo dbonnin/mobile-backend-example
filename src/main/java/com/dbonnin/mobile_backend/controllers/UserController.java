@@ -67,6 +67,12 @@ public class UserController {
         }
         return _user;
     }
+
+    @GetMapping("users/login/{username}")
+    public User login(@PathVariable("usernane") String username) {
+        return userRepository.findByUsername(username).orElseThrow();
+    }
+
     
 
 }
