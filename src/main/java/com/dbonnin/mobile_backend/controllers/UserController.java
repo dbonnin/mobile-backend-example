@@ -69,7 +69,7 @@ public class UserController {
     }
 
     @GetMapping("users/login/{username}")
-    public User login(@PathVariable("usernane") String username) {
+    public User login(@PathVariable("username") String username) {
         return userRepository.findByUsername(username).orElseThrow();
     }
 
